@@ -1,23 +1,29 @@
 body{
-    background-color: rgb(255, 255, 255);
-}
-
-.navbar{/* caractéristiques de ma nav bar */
-    /* max-width: 100%;                */
     background-color: whitesmoke;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 16px;
 }
 
-ul{
-    flex-direction: row;
+#navbar{       /*caractéristiques de ma nav bar */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* position: relative; */
+    background-color: whitesmoke;
+}
+
+#navbar ul{
+    /* flex-direction: row; */
     display: flex;
     justify-content: space-around;
     margin: 0px;
     padding: 0px;
     width: 50%;
     align-items: center;
+}
+
+#logo{
+    padding: 10px;
 }
 
 li{
@@ -30,16 +36,16 @@ li, .login, .logo{
 }
 
 
-input{                 /* caractéristiques de ma search bar */
+/* input{                caractéristiques de ma search bar
     margin: auto;
     padding: 10px;
     border-radius: 30px;
     border: solid rgb(143, 1, 224);  
 }
 
-input:focus{            /* enleve la couleur du contour de ma search bar quand je clique dessus */
+input:focus{           enleve la couleur du contour de ma search bar quand je clique dessu
     outline: none;
-}
+} */
 
 .panier{
     margin: auto;
@@ -51,46 +57,202 @@ input:focus{            /* enleve la couleur du contour de ma search bar quand j
     padding: 20px;
 }
 
-.slider-wrapper{
+#pres{
+    width: 100px;
+    height: 100px;
+}
+
+.carousel{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.carousel div:nth-child(2), .carousel div:nth-child(3) {
+        display: none;
+}
+
+header {
+    position: relative;
+}
+
+.menu-toggle {
+    display: none; /* Cacher le checkbox */
+}
+
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    height: 3px;
+    width: 30px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+    /* justify-content: space-between; */
+}
+
+#menu {
+    display: none; /* Masquer le menu par défaut */
+    /* position: absolute; */
+    justify-content: center;
+    /* top: 60px; /* Ajuster selon la hauteur de ton header */
+    left: 0;
     width: 100%;
 }
-.slider {
-    display: flex;
-    aspect-ratio: 16 / 9;
-    overflow-x: auto;
-    scroll-snap-type: mandatory;
-    scroll-behavior: smooth;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
-    border-radius: 10px;
-  }
 
-.slider img {
-    flex: 1 0 100%;
-    scroll-snap-align: start;
-  }
+/* #menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-.slider-nav{
-    display: flex;
-    column-gap: 1rem;
+#menu ul li {
+    text-align: center;
+} */
+
+#menu ul li a {
+    display: block;
+    /* padding: 10px; */
+    text-decoration: none;
+    color: #333;
+}
+
+/* Afficher le menu lorsque le checkbox est coché */
+.menu-toggle:checked + .burger + #menu {
+    display: block; /* Afficher le menu */
+}
+
+.search-container {
+    position: relative;
+}
+
+#search {
+    width: 200px; /* Largeur sur les écrans plus larges */
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 20px;
+    opacity: 0;
+    transition: width 0.4s ease;
+}
+
+.search-button {
+    cursor: pointer;
     position: absolute;
-    bottom: 1.25rem;
-    left: 50%;
+    right: 5px;
+    top: 5px;
+    background: none;
+    border: none;
 }
 
-.slider-nav a {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background-color: rgb(0, 0, 0);
-    transition: opacity ease 250ms;
+/* Styles pour la loupe */
+.icon {
+    font-size: 20px;
+}
+
+#search:focus {
+    width: 200px;/* Largeur lors du focus */
+    opacity: 1; /* Rendre visible */
+    /* padding: 10px; Rétablir le padding */
+    /* outline: 2px solid #333; Rétablir la bordure */
+}
+
+@media (min-width: 250px){
+    .carousel div:nth-child(1){
+        display: block;
+    }
+
+    
+
+    
+
+    .search-button:hover + #search,
+    #search:focus {
+        opacity: 1; /* Rendre l'input visible au focus */
+    }
+}
+
+@media (min-width: 768px){
+    .carousel div:nth-child(2){
+        display: block;
+    }
+    #navbar div:nth-child(-n+2){
+        display: block;
+    }
+    .burger {
+        display: none; /* Cacher le burger */
+    }
+    
+    #menu {
+        display: block; /* Afficher le menu normalement */
+        position: static; /* Positionner le menu normalement */
+    }
+    #search {
+        width: 200px;/* Largeur lors du focus */
+        opacity: 1;
+        border: none;
+        transition: opacity 0.4s ease;
+    }
 
 }
 
-.slider-nav a:hover{
-    opacity: 1;
+@media(min-width: 992px){
+    .carousel div:nth-child(3){
+        display: block;
+    }
 }
 
+/* X-Small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap
 
+Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
 
+Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
 
+Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
 
+X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { ... } */
+
+/* @media (min-width: 768px){
+    .carousel>div {
+        .carousel:nth-child(2),
+        .carousel:nth-child(3);{
+        display: none;
+    }
+} */
+
+/* @media (min-width: 768px) {
+    .carousel {
+        display: block; Afficher par défaut sur petits écrans
+    }
+
+    Masquer les 2ème et 4ème slides
+    .carousel:nth-child(2),
+    .carousel:nth-child(3) {
+        display: none; Ces éléments ne seront pas affichés
+    }
+} */
+ 
+#top{
+    border: solid;
+}
+
+#suggestion{
+    border: solid;
+}
+
+footer{
+    border: solid;
+}

@@ -8,21 +8,45 @@
 </head>
 <body>
     <header>
-        <div class="navbar">
-            <div class="logo">   <!--logo du site-->
-                <img width="100px" src="./Image/Logosnk.png" alt="Logo du site"> 
-            </div>
-            <div class="menu">
+        <div id="navbar">
+            <input type="checkbox" id="menuToggle" class="menu-toggle">
+            <label for="menuToggle" class="burger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </label>
+            <div id="menu">
                 <ul>
-                    <li>Homme</li>
-                    <li>Femme</li>
-                    <li>Enfant</li>
-                    <li>Sports</li>
+                    <li><a href="#homme">Homme</a></li>
+                    <li><a href="#femme">Femme</a></li>
+                    <li><a href="#enfants">Enfants</a></li>
+                    <li><a href="#sports"></a>Sports</li>
                 </ul>
             </div>
+            <div id="logo">   <!--logo du site-->
+                <img width="100px" src="./Image/Logosnk.png" alt="Logo du site"> 
+            </div>
+            <!-- <div id="menu">
+                <ul>
+                    <li><a href="#Homme"></a>Homme</li>
+                    <li><a href="#Femme"></a>Femme</li>
+                    <li><a href="#Enfants"></a>Enfant</li>
+                    <li><a href="#Sports"></a>Sports</li>
+                </ul>
+            </div> -->
+            
             <div class="box">
-                <div>
+                <!-- <div>
                     <input type="text" placeholder="Rechercher...">
+                </div> -->
+                <div class="search-container">
+                    <input type="text" id="search" placeholder="Rechercher...">
+                    <label for="search" class="search-button">
+                        <div class="icon">
+                            <!-- <span class="icon">🔍</span> -->
+                            <img width="20px" height="20px" src="./Image/search.svg" alt="icone de recherche dans la bar de recherche">
+                        </div>
+                    </label>
                 </div>
                 <div class="login">
                     <img width="25px" height="25px" src="./Image/person-fill.svg" alt="Connexion à votre compte">
@@ -33,27 +57,66 @@
             </div>
         </div>
     </header>
-   <main>
-    <!-- <div class="container"> -->
-        <div class="slider-wrapper">
-            <div class="slider">
-                <img id="slide-1" src="./Image/AIR+FORCE+1+LUXE.png" alt="1e image du carousel">
-                <img id="slide-2"  src="./Image/AIR+FORCE+1+MID+'07.png" alt="2e image du carousel">
-                <img id="slide-3"  src="./Image/AIR+JORDAN+1+MID+SE.png" alt="3e image du carousel">
-                <img id="slide-4"  src="./Image/AIR+JORDAN+1+ZM+AIR+CMFT+2.png" alt="4e image du carousel">
-                <img id="slide-5"  src="./Image/W+AIR+FORCE+1+'07+FLYEASE.png" alt="5e image du carousel">
+    <main>
+        <section id="top">
+            <h2>top</h2>
+                <div class="carousel">
+                    <div>
+                        <img id="pres" src="./Image/AIR+FORCE+1+LUXE.png" alt="photo test">
+                        <p>titre du produit <br>prix en €</p>
+                    </div>
+                    <div>
+                        <img id="pres" src="./Image/AIR+JORDAN+1+MID+SE.png" alt="photo test">
+                        <p>titre du produit <br>prix en €</p>
+                    </div>
+                    <div>
+                        <img id="pres" src="./Image/AIR+FORCE+1+MID+'07.png" alt="photo test">
+                        <p>titre du produit <br>prix en €</p>
+                    </div>
+                </div>
+        </section>
+        <section id="suggestion">
+            <h2>suggestion</h2>
+                <div class="carousel">
+                    <div>
+                        <img id="pres" src="./Image/AIR+FORCE+1+LUXE.png" alt="photo test">
+                        <p>titre du produit <br>prix en €</p>
+                    </div>
+                    <div>
+                        <img id="pres" src="./Image/AIR+JORDAN+1+MID+SE.png" alt="photo test">
+                        <p>titre du produit <br>prix en €</p>
+                    </div>
+                    <div>
+                        <img id="pres" src="./Image/AIR+FORCE+1+MID+'07.png" alt="photo test">
+                        <p>titre du produit <br>prix en €</p>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <footer>
+        <div id="rs">
+            <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F%3Flocale%3Dfr_FR"></a>
+            <a href="https://x.com/?lang=fr"></a>
+            <a href="https://x.com/?lang=fr"></a>
+            <a href="https://www.instagram.com/"></a>
+        </div>
+        <div id="allexplain">
+            <div>
+                <ul>
+                    <li>faq</li>
+                    <li>blog</li>
+                    <li>sav</li>
+                </ul>
             </div>
-            <div class="slider-nav">
-                <a href="#slide-1"></a>
-                <a href="#slide-2"></a>
-                <a href="#slide-3"></a>
-                <a href="#slide-4"></a>
-                <a href="#slide-5"></a>
+            <div>
+                <ul>
+                    <li>conditions utilisations</li>
+                    <li>conditions de ventes</li>
+                    <li>informations de l'entreprise</li>
+                </ul>
             </div>
         </div>
-    <!-- </div> -->
-   </main>
-     
+    </footer>
 </body>
 </html>
 
